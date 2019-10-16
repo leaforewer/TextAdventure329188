@@ -27,9 +27,20 @@ public class MyAdventure : MonoBehaviour
         swatsend,
         requests1,
         requests2,
-        deepweb1,
-        deepweb2,
+        deepwebnot1, //deepweb
+        deepwebsurf1,
+        deepwebsurf1v,
         deepwebsituatie,
+        deepwebpizza,
+        deepwebeye,
+        deepwebkeuze2,
+        deepwebpeek,
+        deepwebnopeek,
+        deepwebkeuze3,
+        deepwebtaser,
+        deepwebdoorbell,
+        deepwebsurf2,
+        hitman2,
         quit1,
         quit2,
         quitja1,
@@ -49,7 +60,7 @@ public class MyAdventure : MonoBehaviour
         Terminal.ClearScreen();
         Terminal.WriteLine("Welcome to Last Work");
         Terminal.WriteLine("This is a Text-Based game and you must   ensure that you make good choices.");
-        Terminal.WriteLine("Every decision you make can change your destiny, be careful.");
+        Terminal.WriteLine("Every decision you make can change has consequences, be careful.");
         Terminal.WriteLine("                                       ");
         Terminal.WriteLine("Type start to begin");
         currentState = States.mainmenu;
@@ -185,6 +196,7 @@ public class MyAdventure : MonoBehaviour
                 }
 
                 break;
+
             //gelinkd naar de eind van fbi
             case States.wifinee:
                 if (input == "request")
@@ -227,7 +239,7 @@ public class MyAdventure : MonoBehaviour
             case States.requests1:
                 if (input == "Deepweb")
                 {
-                    Deepweb1();
+                    Deepwebnot1();
                 }
                 else if (input == "Hack")
                 {
@@ -239,12 +251,87 @@ public class MyAdventure : MonoBehaviour
                 }
 
                 break;
+            case States.deepwebnot1:
+                if (input == "continue")
+                {
+                    Deepwebsurf1();
+                }
 
+                break;
+
+            case States.deepwebsurf1:
+                if (input == "surf")
+                {
+                    Deepwebsurf1v();
+                }
+
+                break;
+            case States.deepwebsurf1v:
+                if (input == "v")
+                {
+                    Deepwebsituatie();
+                }
+
+                break;
+            case States.deepwebsituatie:
+                if (input == "pizza")
+                {
+                    Deepwebpizza();
+                }
+
+                break;
+            case States.deepwebpizza:
+                if (input == "door")
+                {
+                    Deepwebeye();
+                }
+                else if (input == "closet")
+                {
+                    Deepwebkeuze2();
+                }
+
+                break;
+            case States.deepwebeye:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
+                }
+
+                break;
+            case States.deepwebkeuze2:
+                if (input == "peek")
+                {
+                    Deepwebpeek();
+                }
+                else if (input == "stay")
+                {
+                    Deepwebnopeek();
+                }
+
+                break;
+            case States.deepwebpeek:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
+                }
+
+                break;
+            case States.deepwebnopeek:
+                if (input == "taser")
+                {
+                    Deepwebtaser();
+                }
+                else if (input == "stay")
+                {
+                    Deepwebdoorbell();
+                }
+
+                break;
             //Hacknee with no noti
             case States.requests2:
                 if (input == "Deepweb")
                 {
-                    Deepweb2();
+                    Deepwebsurf2();
                 }
                 else if (input == "Hack")
                 {
@@ -253,6 +340,20 @@ public class MyAdventure : MonoBehaviour
                 else if (input == "Quit")
                 {
                     Quit2();
+                }
+
+                break;
+            case States.deepwebsurf2:
+                if (input == "continue")
+                {
+                    Deepwebhitman2();
+                }
+
+                break;
+            case States.hitman2:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
                 }
 
                 break;
@@ -287,13 +388,13 @@ public class MyAdventure : MonoBehaviour
                 }
 
                 break;
-                case States.quitja2:
-                    if (input == "mainmenu")
-                    {
-                        ShowMainMenu();
-                    }
+            case States.quitja2:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
+                }
 
-                    break;
+                break;
         }
     }
 
@@ -392,14 +493,15 @@ public class MyAdventure : MonoBehaviour
         currentState = States.informatiecomputer2;
     }
 
+    //HACK SECTION
     void Hacrequest1()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine("A mean while there comes suggestion   from computer and it says" +
+        Terminal.WriteLine("A mean while later there comes suggestion from computer and it says" +
                            "'Do you want to get rid of your work and live the rest of your life with pleasent?" +
-                           "Then, we can hack somebody to gain money from him. But it's a risky process, there may be some people who can track us, like swat or fbi.." +
+                           " Then, we can hack somebody to gain money from him. But it's a risky process, there may be some people who can track us, like swat or fbi..." +
                            "Are you sure you want to do this ?'" +
-                           "                                          ");
+                           "                   ");
         Terminal.WriteLine("Type 'yes' to accept the suggestion or Type 'no' to reject the suggestion.");
         currentState = States.hackrequest1;
     }
@@ -407,11 +509,11 @@ public class MyAdventure : MonoBehaviour
     void Hacrequest2()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine("A mean while there comes suggestion   from computer and it says" +
+        Terminal.WriteLine("A mean while later there comes suggestion from computer and it says" +
                            "'Do you want to get rid of your work and live the rest of your life with pleasent?" +
-                           "Then, we can hack somebody to gain money from him. But it's a risky process, there may be some people who can track us, like swat or fbi..." +
+                           " Then, we can hack somebody to gain money from him. But it's a risky process, there may be some people who can track us, like swat or fbi..." +
                            "Are you sure you want to do this ?'" +
-                           "                                           ");
+                           "                   ");
         Terminal.WriteLine("Type 'yes' to accept the suggestion or Type 'no' to reject the suggestion.");
         currentState = States.hackrequest2;
     }
@@ -419,28 +521,28 @@ public class MyAdventure : MonoBehaviour
     void Hackja1()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine("Florean opens the software which it uses for hacking the people" +
-                           "                ---------------Proccessing---------------" +
-                           "-----------------Cracking---------------------" +
-                           "------------------------------------------------" +
-                           "Done." +
-                           "-------------------" +
+        Terminal.WriteLine("Florean opens the software which it    uses for hacking the people" +
+                           "             ---------------Proccessing---------------" +
+                           "---------------Cracking-----------------------" +
+                           "--------------------------------------------------" +
+                           " Done." +
+                           "-----------------" +
                            "                                        " +
-                           "Type 'dascoin' to see how much you have got.");
+                           " Type 'dascoin' to see how much you have got.");
         currentState = States.hackja1;
     }
 
     void Hackja2() //hier komt dascoin anders met swat sierenen
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine("Florean opens the software which it uses for hacking the people" +
-                           "                ---------------Proccessing---------------" +
-                           "-----------------Cracking---------------------" +
-                           "------------------------------------------------" +
-                           "Done." +
-                           "-------------------" +
+        Terminal.WriteLine("Florean opens the software which it    uses for hacking the people" +
+                           "             ---------------Proccessing---------------" +
+                           "---------------Cracking-----------------------" +
+                           "--------------------------------------------------" +
+                           " Done." +
+                           "-----------------" +
                            "                                        " +
-                           "Type 'dascoin' to see how much you have got.");
+                           " Type 'dascoin' to see how much you have got.");
         currentState = States.hackja2;
     }
 
@@ -448,13 +550,12 @@ public class MyAdventure : MonoBehaviour
     {
         Terminal.ClearScreen();
         Terminal.WriteLine(
-            "you have seen you have got 60 bitcoin and that's mean that you have money to buy everything you want." +
             "The Computer wants your account so you can transfer the money to your second fake account which no one can track it." +
-            "You gave your account and there comes an alert. It says '-NOTIFICATION- POLICE IS ON THE WAY -ALERT-'" +
+            "You have seen you have got 60 bitcoin." +
+            "After 10 minutes an alert pops up. It says '-NOTIFICATION- POLICE IS ON THE WAY -ALERT-'" +
             "'SUGGESTION = CHANGE YOUR WIFI!'" +
-            "                                                     " +
             "You want to change your wifi or keep surfing on the computer?" +
-            "Type 'yes' to change your wifi or Type 'no' to keep surfing in the computer.");
+            "Type 'yes' to change your wifi or Type   'no' to keep surfing in the computer.");
         currentState = States.meldingbitcoin1;
     }
 
@@ -481,10 +582,12 @@ public class MyAdventure : MonoBehaviour
     {
         Terminal.ClearScreen();
         Terminal.WriteLine(
-            "you have seen you have got 60 bitcoin and that's mean that you have money to buy everything you want." +
             "The Computer wants your account so you can transfer the money to your second fake account which no one can track it." +
-            "You gave your account and there comes a new request menu" +
-            "To open the request window type 'request'.");
+            "You have seen you have got 60 bitcoin." +
+            "After 10 minutes an alert pops up. It says '-NOTIFICATION- POLICE IS ON THE WAY -ALERT-'" +
+            "'SUGGESTION = CHANGE YOUR WIFI!'" +
+            "You want to change your wifi or keep surfing on the computer?" +
+            "Type 'yes' to change your wifi or Type   'no' to keep surfing in the computer.");
         currentState = States.meldingbitcoin2;
     }
 
@@ -494,11 +597,11 @@ public class MyAdventure : MonoBehaviour
         Terminal.ClearScreen();
         Terminal.WriteLine("             Menu              " +
                            "        What do you want to do, sir?" +
-                           "                                        " +
+                           "            " +
                            "-Hack" +
-                           "                                    " +
+                           "                                   " +
                            "-Deepweb" +
-                           "                                       " +
+                           "                                " +
                            "-Quit");
         currentState = States.requests1;
     }
@@ -534,18 +637,153 @@ public class MyAdventure : MonoBehaviour
         currentState = States.swatsend;
     }
 
-    void Deepweb1()
+    //DEEPWEB SECTION
+    void Deepwebnot1()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "Notification--> Caution: The websites that you are going to surf contain forbidden contents." +
+            " Be sure you are ready before you logged in. Tip: There may be some website that you can log in with permission. You have for now no permission to go in, so please be careful." +
+            " Otherwise your ip will be shown to other users and that can be dangerous." +
+            "Type 'continue' to go further.");
+        currentState = States.deepwebnot1;
+    }
+
+    void Deepwebsurf1()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "Now you are officially online in deepweb servers. The dark side of the network you have ever seen. " +
+            "You are really wondering what is beyond these websites. You are keep searching and learning all secret deals between country." +
+            "Type 'v' to continue.");
+        currentState = States.deepwebsurf1;
+    }
+
+    void Deepwebsurf1v()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "But you realized after you were on the website only with permission. And that means your ip address is already showing to the users. You just didn't mind it kept going with surfing." +
+            " All you read about these forbidden website. If you go in, the hitman will come after you..'" +
+            "Type 'surf' to continue with your surfing.");
+        currentState = States.deepwebsurf1v;
+    }
+
+    void Deepwebsituatie()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "After a while Florean writes to you. It says, 'How many website you logged in means how many point you can actually earn. With these points i can make a bonus surprise for you. I already ordered your surprise, it's on the way.' " +
+            "Type 'pizza' to go further. ");
+        currentState = States.deepwebsituatie;
+    }
+
+    void Deepwebpizza()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "You heard a voice from the door. It may be the surprise what florean ordered or it might be worst than you think." +
+            " Do you want to look through to eyedoor or do you want to hide in closet?" +
+            "Type 'closet' to hide or Type 'door' to go to door.");
+        currentState = States.deepwebpizza;
+    }
+
+
+    void Deepwebeye()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine("You went to the door and looked to the eye of the door..." +
+                           "        ..." +
+                           "        ..." +
+                           " BAM " +
+                           "                       " +
+                           "You got shot by hitman from the eyehole.           " +
+                           "            END                   " +
+                           "       Type 'mainmenu' to go back to Mainmenu.");
+        currentState = States.deepwebeye;
+    }
+
+    void Deepwebkeuze2()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine("You are hiding in the closet, and you hear a voice.       " +
+                           "*Door opens*                " +
+                           "Someone is in the office. Do you want to peek out from closet or do you want to stay still?" +
+                           "Type 'peek' to peek out or Type 'stay' to stay still.");
+        currentState = States.deepwebkeuze2;
+    }
+
+    void Deepwebpeek()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "When you peeked, you saw a man with no hair and with a barcode behind his head. You have never seen someone before like him." +
+            "When you open the door of closet a bit, it makes a noise of squeak. The hitman shots reflexively to the closet where you are staying right now! " +
+            " And ... BAM!!   one of the bullets got you and you died.                " +
+            "              END                    " +
+            "Go back to main menu Type 'mainmenu'. ");
+        currentState = States.deepwebpeek;
+    }
+
+    void Deepwebnopeek()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "You decided to stay in this small closet. When you are staying in, you found something in the closet.. " +
+            " It's your taser! You lost it 3 weeks ago. Now you have opportunity to shoot the person who is in the same apartment or you can stay to pray until god helps you out." +
+            "Type 'taser' to shock the person or Type 'stay' to stay keep calm. ");
+        currentState = States.deepwebnopeek;
+    }
+
+    void Deepwebkeuze3()
     {
         Terminal.ClearScreen();
         Terminal.WriteLine("1");
-        currentState = States.deepweb1;
+        currentState = States.deepwebkeuze3;
     }
 
-    void Deepweb2()
+    void Deepwebtaser()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine("2");
-        currentState = States.deepweb2;
+        Terminal.WriteLine(
+            "First, you picked a bit and saw the person. Then you have finished him. You just shocked him with your taser and get him arrested. Later on you went to your home and you promised you are never going to sit on strange computers." +
+            "            END                   " +
+            "Happy ending                          " +
+            "Type 'mainmenu' to go back to main menu. ");
+        currentState = States.deepwebtaser;
+    }
+
+    void Deepwebdoorbell()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "It's your lucky day, dude. While you are staying in the closet, the doorbell just rings. And more several times. You are not sure if the guy in the apartment has gone or what. " +
+            "When you opened the doors of closet, you saw no one and opened the door. It was pizza deliverer, and he says 'This pizza is ordered to this address, Enjoy with your meal, dude.'" +
+            " *Closes the door* .  You eat some pizza and promised you will never sit back on the strange looked computers." +
+            "              END                       " +
+            "Type 'mainmenu' to go back to main menu.");
+        currentState = States.deepwebdoorbell;
+    }
+
+    void Deepwebsurf2()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "Now you are officially online in deepweb servers. The dark side of the network you have ever seen. " +
+            "You are really wondering what is beyond these websites. You are keep searching and learning all secret deals between country." +
+            "Type 'continue' to go further.");
+        currentState = States.deepwebsurf2;
+    }
+
+    void Deepwebhitman2()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine(
+            "While you are surfing, you feel something behind your head. You think first a man appears behind you and aiming at you.. Actually it is what i exactly said. It was the hitman and BAM! .." +
+            "       you were shot behind your head and died." +
+            "                      END                     " +
+            "Type 'mainmenu' to go back to main menu");
+        currentState = States.hitman2;
     }
 
     void Requests2()
@@ -553,11 +791,11 @@ public class MyAdventure : MonoBehaviour
         Terminal.ClearScreen();
         Terminal.WriteLine("             Menu              " +
                            "        What do you want to do, sir?" +
-                           "                                        " +
+                           "            " +
                            "-Hack" +
-                           "                                    " +
+                           "                                   " +
                            "-Deepweb" +
-                           "                                       " +
+                           "                                " +
                            "-Quit");
         currentState = States.requests2;
     }
@@ -582,12 +820,12 @@ public class MyAdventure : MonoBehaviour
     {
         Terminal.ClearScreen();
         Terminal.WriteLine("Shut downed..                            " +
-                           "--------------------------------------------" +
+                           "--------------------------------------" +
                            "You have shoutdowned the computer, went to your home and want to forget everything what happened today." +
-                           "-------------------------------------------" +
+                           "                 --------------------------------" +
                            "Well, nothing happened. If you found out this end, you may be not a excited player. You are not looking for new excitement things :) " +
-                           "-------------------------------------" +
-                           "END ------------------------------" +
+                           "                                   " +
+                           "--------------- END --------------------" +
                            "To turn to the Main menu type 'mainmenu'.");
         currentState = States.quitja1;
     }
@@ -596,12 +834,12 @@ public class MyAdventure : MonoBehaviour
     {
         Terminal.ClearScreen();
         Terminal.WriteLine("Shut downed..                            " +
-                           "--------------------------------------------" +
+                           "--------------------------------------" +
                            "You have shoutdowned the computer, went to your home and want to forget everything what happened today." +
-                           "-------------------------------------------" +
+                           "                 --------------------------------" +
                            "Well, nothing happened. If you found out this end, you may be not a excited player. You are not looking for new excitement things :) " +
-                           "-------------------------------------" +
-                           "END ------------------------------" +
+                           "                                   " +
+                           "--------------- END --------------------" +
                            "To turn to the Main menu type 'mainmenu'.");
         currentState = States.quitja2;
     }
