@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0f5a1ec-0455-4991-afe3-ffa50e0055a0" name="Default Changelist" comment="" />
+    <list default="true" id="a0f5a1ec-0455-4991-afe3-ffa50e0055a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TextAdventure[329188]/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TextAdventure[329188]/.idea/indexLayout.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +25,7 @@
     <select />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/GameProject-J1-P1-C2019" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MyAdventure.cs" root0="FORCE_HIGHLIGHTING" />
@@ -78,6 +80,7 @@
       <workItem from="1571137524461" duration="30000" />
       <workItem from="1571138654103" duration="5682000" />
       <workItem from="1571208886136" duration="5959000" />
+      <workItem from="1571314907636" duration="11000" />
     </task>
     <servers />
   </component>
@@ -91,7 +94,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
