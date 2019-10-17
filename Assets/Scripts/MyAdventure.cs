@@ -260,14 +260,14 @@ public class MyAdventure : MonoBehaviour
                 break;
 
             case States.deepwebsurf1:
-                if (input == "surf")
+                if (input == "v")
                 {
                     Deepwebsurf1v();
                 }
 
                 break;
             case States.deepwebsurf1v:
-                if (input == "v")
+                if (input == "surf")
                 {
                     Deepwebsituatie();
                 }
@@ -581,13 +581,7 @@ public class MyAdventure : MonoBehaviour
     void Meldingbitcoin2()
     {
         Terminal.ClearScreen();
-        Terminal.WriteLine(
-            "The Computer wants your account so you can transfer the money to your second fake account which no one can track it." +
-            "You have seen you have got 60 bitcoin." +
-            "After 10 minutes an alert pops up. It says '-NOTIFICATION- POLICE IS ON THE WAY -ALERT-'" +
-            "'SUGGESTION = CHANGE YOUR WIFI!'" +
-            "You want to change your wifi or keep surfing on the computer?" +
-            "Type 'yes' to change your wifi or Type   'no' to keep surfing in the computer.");
+        Terminal.WriteLine("You are continuing with your surf and Type 'request' to go request menu.");
         currentState = States.meldingbitcoin2;
     }
 
