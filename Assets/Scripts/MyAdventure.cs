@@ -36,9 +36,9 @@ public class MyAdventure : MonoBehaviour
         deepwebkeuze2,
         deepwebpeek,
         deepwebnopeek,
-        deepwebkeuze3,
         deepwebtaser,
         deepwebdoorbell,
+        deepwebdoorbellv,
         deepwebsurf2,
         hitman2,
         quit1,
@@ -60,7 +60,7 @@ public class MyAdventure : MonoBehaviour
         Terminal.ClearScreen();
         Terminal.WriteLine("Welcome to Last Work");
         Terminal.WriteLine("This is a Text-Based game and you must   ensure that you make good choices.");
-        Terminal.WriteLine("Every decision you make can change has consequences, be careful.");
+        Terminal.WriteLine("Every decision you make has consequences, be careful.");
         Terminal.WriteLine("                                       ");
         Terminal.WriteLine("Type start to begin");
         currentState = States.mainmenu;
@@ -327,6 +327,28 @@ public class MyAdventure : MonoBehaviour
                 }
 
                 break;
+            //mainmenu section
+            case States.deepwebtaser:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
+                }
+
+                break;
+            case States.deepwebdoorbell:
+                if (input == "v")
+                {
+                    Deepwebdoorbelv();
+                }
+
+                break;
+            case States.deepwebdoorbellv:
+                if (input == "mainmenu")
+                {
+                    ShowMainMenu();
+                }
+
+                break;
             //Hacknee with no noti
             case States.requests2:
                 if (input == "Deepweb")
@@ -506,7 +528,7 @@ public class MyAdventure : MonoBehaviour
         currentState = States.hackrequest1;
     }
 
-    void Hacrequest2()
+    void Hacrequest2() //als hij zegt 'yes' dan gaat de player direct naar hackja2 en dan swats.
     {
         Terminal.ClearScreen();
         Terminal.WriteLine("A mean while later there comes suggestion from computer and it says" +
@@ -728,14 +750,7 @@ public class MyAdventure : MonoBehaviour
             "Type 'taser' to shock the person or Type 'stay' to stay keep calm. ");
         currentState = States.deepwebnopeek;
     }
-
-    void Deepwebkeuze3()
-    {
-        Terminal.ClearScreen();
-        Terminal.WriteLine("1");
-        currentState = States.deepwebkeuze3;
-    }
-
+    
     void Deepwebtaser()
     {
         Terminal.ClearScreen();
@@ -752,11 +767,17 @@ public class MyAdventure : MonoBehaviour
         Terminal.ClearScreen();
         Terminal.WriteLine(
             "It's your lucky day, dude. While you are staying in the closet, the doorbell just rings. And more several times. You are not sure if the guy in the apartment has gone or what. " +
-            "When you opened the doors of closet, you saw no one and opened the door. It was pizza deliverer, and he says 'This pizza is ordered to this address, Enjoy with your meal, dude.'" +
-            " *Closes the door* .  You eat some pizza and promised you will never sit back on the strange looked computers." +
-            "              END                       " +
-            "Type 'mainmenu' to go back to main menu.");
+            "When you opened the doors of closet, you saw no one and opened the door. It was pizza deliverer, and he says 'This pizza is ordered to this address, Enjoy``.'" +
+            " Type 'v' to go further.");
         currentState = States.deepwebdoorbell;
+    }
+
+    void Deepwebdoorbelv()
+    {
+        Terminal.WriteLine(" *Closes the door* .  You eat some pizza and promised you will never sit back on the strange looked computers." +
+            "    END  " +
+            "Type 'mainmenu' to go back to main menu.");
+        currentState = States.deepwebdoorbellv;
     }
 
     void Deepwebsurf2()
